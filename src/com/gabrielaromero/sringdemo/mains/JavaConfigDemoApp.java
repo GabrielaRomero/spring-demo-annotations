@@ -1,14 +1,16 @@
-package com.gabrielaromero.sringdemo;
+package com.gabrielaromero.sringdemo.mains;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AnnotationDemoApp {
+import com.gabrielaromero.sringdemo.DeporteConfiguracion;
+import com.gabrielaromero.sringdemo.Entrenador;
+
+public class JavaConfigDemoApp {
 
 	public static void main(String[] args) {
-	
-		
-		//leer archivo de configuración
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		//leer clase de configuración Spring
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DeporteConfiguracion.class);
 		
 		//obtener el bean del contendor de spring  --lo toma de @compoent
 		Entrenador elEntrenador = context.getBean("entrenadorDeTennis", Entrenador.class);
@@ -19,6 +21,7 @@ public class AnnotationDemoApp {
 		
 		//cerrar el contexto
 		context.close();
+
 
 	}
 

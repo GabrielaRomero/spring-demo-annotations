@@ -1,11 +1,16 @@
 package com.gabrielaromero.sringdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component("tontoEntrenador")  
-@Component
+//@Component("tontoEntrenador")   //Sepued definir el nombre
+//Scope("prototype") //Se indicaa que dejara de der un singleton (bens que ocupan el mismo espacio en memoria), ocupara distinto espacio en memoria
+@Component  //SE indica que son los beans q escaneara Spring oo bean
 public class EntrenadorDeTennis implements Entrenador {
 	@Qualifier("randomFortunaService") //Anotacion para especificar que implementaciond e interfaz debe tomar
 	@Autowired //Iyecion por field
@@ -14,6 +19,18 @@ public class EntrenadorDeTennis implements Entrenador {
 	//Agregar contructor predeterminado
 	 public EntrenadorDeTennis() {
 		System.out.println(">> Entrenador de Tennis dentro del constructor por default");
+	}
+	 
+	 //Definir metodo de inicio
+	 @PostConstruct
+	 private void  metodoInit() {
+		 System.out.println(">> Enrenador de Tennis: adentro de metodoInit() ");
+	}
+	 
+	 //Definir metodo de destruccion
+	 @PreDestroy
+	 private void  metodoDestroy() {
+		 System.out.println(">> Enrenador de Tennis: adentro de metodoDestroy() ");
 	}
 	
 //	 //Definir metodo setter
