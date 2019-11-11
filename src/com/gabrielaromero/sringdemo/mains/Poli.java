@@ -27,6 +27,25 @@ public class Poli {
 		
 	}
 	
+	public void ordArreglos(){
+		int array[] = {16,30,3,20};
+		int ordenado[]= new int[4];
+		int mayor=0, aux;
+
+		for (int i = 0; i < array.length; i++) {
+			if(array[i]> mayor) {
+				mayor = array[i];
+				
+				
+			}else {
+				
+			}
+			
+		}
+		
+	}
+		
+	
 public void esPoli2(String cadena) {
 		
 		String reverse = "";
@@ -45,7 +64,9 @@ public void esPoli2(String cadena) {
 		}else{
 			System.out.println( "No es polindromo");
 		}
-			
+		
+		
+		
 		
 
 		

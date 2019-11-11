@@ -1,4 +1,4 @@
-package com.gabrielaromero.sringdemo;
+package com.gabrielaromero.sringdemo.entrenadores;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import com.gabrielaromero.sringdemo.Entrenador;
+import com.gabrielaromero.sringdemo.FortunaService;
 
 //@Component("tontoEntrenador")   //Sepued definir el nombre
 //Scope("prototype") //Se indicaa que dejara de der un singleton (bens que ocupan el mismo espacio en memoria), ocupara distinto espacio en memoria
